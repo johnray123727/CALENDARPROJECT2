@@ -1,0 +1,174 @@
+    .item{
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin: 20px 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        font-family: 'Arial', sans-serif;
+        letter-spacing: 2px;
+        grid-column: 1 / -1;
+    }
+    body{
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+                font-family: 'Arial', sans-serif;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+    }
+    .calender{
+                float: none;
+                width: auto;
+                margin: 0;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                vertical-align: top;
+    }
+
+    .calender:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    .month{
+                text-align: center;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                font-size: 28px;
+                letter-spacing: 1px;
+                color: white;
+                padding: 20px;
+                margin: 0;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    table{
+                width: 100%;
+                table-layout: fixed;
+                border-collapse: collapse;
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+    }
+
+    th, td{
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid #e0e0e0;
+                padding: 12px 8px;
+                vertical-align: middle;
+    }
+    th{
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                padding: 15px 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+    }
+    td{
+                background: #f8f9fa;
+                color: #2c3e50;
+                width: 14.28%;
+                height: 45px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+    }
+
+    td:not(:empty):hover {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                transform: scale(1.05);
+                z-index: 10;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    /* Sunday styling */
+    td[style*="color:red"] {
+                color: #e74c3c !important;
+                font-weight: bold;
+    }
+
+    /* Empty cells */
+    td:empty {
+                background: #ecf0f1;
+                color: #bdc3c7;
+    }
+
+    /* Today highlighting (you can add this class to current date) */
+    .today {
+                background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%) !important;
+                color: white !important;
+                font-weight: bold;
+                box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+    }
+
+    /* Holidays section styling */
+    .holidays {
+                clear: none;
+                margin-top: 0;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                overflow: hidden;
+                padding: 20px;
+                grid-column: 1 / -1;
+    }
+
+    .holidays table {
+                width: 100%;
+                border-collapse: collapse;
+    }
+
+    .holidays td {
+                background: #f8f9fa;
+                border: 1px solid #e0e0e0;
+                padding: 15px;
+                vertical-align: top;
+                transition: all 0.3s ease;
+    }
+
+    .holidays td:hover {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                transform: translateY(-2px);
+    }
+
+    .holidays a {
+                color: #2c3e50;
+                text-decoration: none;
+                font-weight: 500;
+                display: block;
+                transition: color 0.3s ease;
+    }
+
+    .holidays td:hover a {
+                color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 1200px) {
+        .calender {
+            width: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .calender {
+            width: auto;
+            margin: 0;
+            float: none;
+        }
+        
+        .item {
+            font-size: 36px;
+        }
+        
+        .month {
+            font-size: 24px;
+        }
+    }
